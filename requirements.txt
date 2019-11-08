@@ -1,0 +1,6 @@
+git-pylint-commit-hook==2.5.1
+logger==1.4
+pandas==0.25.2
+typing==3.7.4.1
+intuit-oauth==1.2.2
+requests
