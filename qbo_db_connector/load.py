@@ -1,6 +1,7 @@
 """
 QuickbooksLoadConnector(): Connection between Quickbooks and Database
 """
+from os import path
 import json
 import logging
 from typing import Dict, List
@@ -73,6 +74,16 @@ class QuickbooksLoadConnector:
         })
         return refresh_token
 
+    def create_tables(self):
+        """
+        Creates DB tables
+        :return: None
+        """
+        basepath = path.dirname(__file__)
+        ddl_path = path.join(basepath, 'load_ddl.sql')
+        ddl_sql = open(ddl_path, 'r').read()
+        self.__dbconn.executescript(ddl_sql)
+
     @staticmethod
     def __construct_check_line_items(check_line_items: List[Dict]) -> List[Dict]:
         """
@@ -101,7 +112,8 @@ class QuickbooksLoadConnector:
         return lines
 
     @staticmethod
-    def __construct_check(check: Dict, custom_transaction_date: str = None, custom_private_note: str = None) -> Dict:
+    def __construct_check(check: Dict, custom_transaction_date: str = None,
+                          custom_private_note: str = None, custom_doc_number: str = None) -> Dict:
         """
         Create a check
         :param check: check object extracted from database
@@ -109,7 +121,7 @@ class QuickbooksLoadConnector:
         :param custom_private_note: To be sent when private note needs to be changed.
         :return: constructed check
         """
-        quickbooks_load_check = {
+        qbo_load_check = {
             'PaymentType': 'Check',
             'AccountRef': {
                 'value': check['bank_account']
@@ -125,15 +137,17 @@ class QuickbooksLoadConnector:
                 "value": check['currency']
             },
             'PrivateNote': custom_private_note if custom_private_note else check['private_note'],
-            'Line': []
+            'Line': [],
+            'DocNumber': custom_doc_number
         }
 
-        return quickbooks_load_check
+        return qbo_load_check
 
     def load_check(self, check_id: str, custom_transaction_date: str = None,
-                   custom_private_note: str = None) -> (bool, Dict):
+                   custom_private_note: str = None, custom_doc_number: str = None) -> (bool, Dict):
         """
         Load check to Quicbooks
+        :param custom_doc_number: Custom doc number
         :param custom_private_note: To be sent when private note needs to be changed.
         :param custom_transaction_date: To be sent when transaction date needs to be changed.
         :param check_id: Check id to be loaded
@@ -145,24 +159,25 @@ class QuickbooksLoadConnector:
         url = POST_CHECK_URL.format(self.__base_url, self.__realm_id)
 
         check: Dict = pd.read_sql_query(
-            sql='SELECT * FROM quickbooks_load_checks where id = {0}'.format(check_id),
+            sql='SELECT * FROM qbo_load_checks where id = {0}'.format(check_id),
             con=self.__dbconn
         ).to_dict(orient='records')[0]
 
-        quickbooks_load_check: Dict = self.__construct_check(check, custom_transaction_date, custom_private_note)
+        qbo_load_check: Dict = self.__construct_check(check, custom_transaction_date,
+                                                      custom_private_note, custom_doc_number)
 
         check_line_items: List[Dict] = pd.read_sql_query(
-            sql="SELECT * FROM quickbooks_load_check_lineitems where check_id = '{0}'".format(check_id),
+            sql="SELECT * FROM qbo_load_check_lineitems where check_id = '{0}'".format(check_id),
             con=self.__dbconn).to_dict(orient='records')
 
         if not check_line_items:
             return load_success, {}
 
         lines = self.__construct_check_line_items(check_line_items)
-        quickbooks_load_check['Line'].append(lines)
+        qbo_load_check['Line'].append(lines)
 
         response = json.loads(
-            requests.post(url, headers=self.__request_header, data=json.dumps(quickbooks_load_check)).text
+            requests.post(url, headers=self.__request_header, data=json.dumps(qbo_load_check)).text
         )
 
         if 'Fault' in response:
@@ -225,7 +240,7 @@ class QuickbooksLoadConnector:
 
     @staticmethod
     def __construct_journal_entry(journal_entry: Dict, custom_transaction_date: str = None,
-                                  custom_private_note: str = None) -> Dict:
+                                  custom_private_note: str = None, custom_doc_number: str = None) -> Dict:
         """
         Create a journal entry
         :param journal_entry: journal entry object extracted from database
@@ -233,21 +248,23 @@ class QuickbooksLoadConnector:
         :param custom_private_note: To be sent when private note needs to be changed.
         :return: constructed journal entry
         """
-        quickbooks_load_journal_entry = {
+        qbo_load_journal_entry = {
             'TxnDate': custom_transaction_date if custom_transaction_date else journal_entry['record_date'],
             'PrivateNote': custom_private_note if custom_private_note else journal_entry['private_note'],
             'Line': [],
             'CurrencyRef': {
                 "value": journal_entry['currency']
-            }
+            },
+            'DocNumber': custom_doc_number
         }
 
-        return quickbooks_load_journal_entry
+        return qbo_load_journal_entry
 
     def load_journal_entry(self, journal_entry_id: str, custom_transaction_date: str = None,
-                           custom_private_note: str = None):
+                           custom_private_note: str = None, custom_doc_number: str = None):
         """
         Load journal entry to Quickbooks
+        :param custom_doc_number: Doc number for journal_entry
         :param journal_entry_id: Journal Entry unique id
         :param custom_transaction_date: To be sent when transaction date needs to be changed.
         :param custom_private_note: To be sent when private note needs to be changed.
@@ -260,30 +277,30 @@ class QuickbooksLoadConnector:
         load_success = False
 
         journal_entry: Dict = pd.read_sql_query(
-            sql="SELECT * FROM quickbooks_load_journal_entries where id = '{0}'".format(journal_entry_id),
+            sql="SELECT * FROM qbo_load_journal_entries where id = '{0}'".format(journal_entry_id),
             con=self.__dbconn
         ).to_dict(orient='records')[0]
 
-        quickbooks_load_journal_entry: Dict = self.__construct_journal_entry(
+        qbo_load_journal_entry: Dict = self.__construct_journal_entry(
             journal_entry=journal_entry, custom_transaction_date=custom_transaction_date,
-            custom_private_note=custom_private_note
+            custom_private_note=custom_private_note, custom_doc_number=custom_doc_number
         )
 
         journal_entry_line_items: List[Dict] = pd.read_sql_query(
-            sql="SELECT * FROM quickbooks_load_journal_entries where journal_entry_id = '{0}'".format(journal_entry_id),
+            sql="SELECT * FROM qbo_load_journal_entry_lineitems where journal_entry_id = '{0}'".format(journal_entry_id),
             con=self.__dbconn
         ).to_dict(orient='records')
 
         if not journal_entry_line_items:
             return load_success, {}
 
-        quickbooks_load_journal_entry_line_items: List[Dict] = self.__construct_journal_entry_line_items(
+        qbo_load_journal_entry_line_items: List[Dict] = self.__construct_journal_entry_line_items(
             journal_entry_line_items
         )
-        quickbooks_load_journal_entry['Line'].append(quickbooks_load_journal_entry_line_items)
+        qbo_load_journal_entry['Line'].append(qbo_load_journal_entry_line_items)
 
         response = json.loads(
-            requests.post(url, headers=self.__request_header, data=json.dumps(quickbooks_load_journal_entry)).text
+            requests.post(url, headers=self.__request_header, data=json.dumps(qbo_load_journal_entry)).text
         )
 
         if 'Fault' in response:
@@ -382,7 +399,7 @@ class QuickbooksLoadConnector:
 
         return {}
 
-    def load_attachments(self, ref_id: str, ref_type: str) -> bool:
+    def load_attachment(self, ref_id: str, ref_type: str) -> bool:
         """
         Link attachments to objects Quickbooks
         :param ref_id: object id
@@ -390,7 +407,7 @@ class QuickbooksLoadConnector:
         :return: True for success, False for failure
         """
         attachment = pd.read_sql_query(
-            "select * from quickbooks_attachments where check_id = '{0}' and type = '{1}'".format(ref_id, ref_type),
+            "select * from qbo_load_attachments where ref_id = '{0}' and ref_type = '{1}'".format(ref_id, ref_type),
             self.__dbconn
         )
         load_success = False

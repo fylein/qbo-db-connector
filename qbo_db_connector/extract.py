@@ -1,6 +1,7 @@
 """
 QuickbooksExtractConnector(): Connection between Quickbooks and Database
 """
+from os import path
 import json
 import logging
 
@@ -27,13 +28,11 @@ class QuickbooksExtractConnector:
     """
     Extract data from Quickbooks and load to Database
     """
-    def __init__(self, config, dbconn):
+    def __init__(self, config, refresh_token, dbconn):
         self.__config = config
         self.__realm_id = config.get('realm_id')
         self.__base_url = config.get('base_url')
         self.__web_app_url = config.get('web_app_url')
-
-        refresh_token = config.get('refresh_token')
 
         self.__dbconn = dbconn
 
@@ -104,6 +103,16 @@ class QuickbooksExtractConnector:
 
         return objects
 
+    def create_tables(self):
+        """
+        Creates DB tables
+        :return: None
+        """
+        basepath = path.dirname(__file__)
+        ddl_path = path.join(basepath, 'extract_ddl.sql')
+        ddl_sql = open(ddl_path, 'r').read()
+        self.__dbconn.executescript(ddl_sql)
+
     def extract_accounts(self) -> List[str]:
         """
         Extract accounts from Quickbooks
@@ -117,7 +126,7 @@ class QuickbooksExtractConnector:
 
         if data:
             df = pd.DataFrame(data)
-            df.to_sql('quickbooks_extract_accounts', self.__dbconn, if_exists='replace', index=False)
+            df.to_sql('qbo_extract_accounts', self.__dbconn, if_exists='append', index=False)
 
             return df['Id'].to_list()
 
@@ -136,7 +145,7 @@ class QuickbooksExtractConnector:
 
         if data:
             df = pd.DataFrame(data)
-            df.to_sql('quickbooks_extract_classes', self.__dbconn, if_exists='replace', index=False)
+            df.to_sql('qbo_extract_classes', self.__dbconn, if_exists='append', index=False)
 
             return df['Id'].to_list()
 
@@ -155,7 +164,7 @@ class QuickbooksExtractConnector:
 
         if data:
             df = pd.DataFrame(data)
-            df.to_sql('quickbooks_extract_departments', self.__dbconn, if_exists='replace', index=False)
+            df.to_sql('qbo_extract_departments', self.__dbconn, if_exists='append', index=False)
 
             return df['Id'].to_list()
 
@@ -174,7 +183,7 @@ class QuickbooksExtractConnector:
 
         if data:
             df = pd.DataFrame(data)
-            df.to_sql('quickbooks_extract_employees', self.__dbconn, if_exists='replace', index=False)
+            df.to_sql('qbo_extract_employees', self.__dbconn, if_exists='append', index=False)
             return df['Id'].to_list()
 
         return []
@@ -197,8 +206,8 @@ class QuickbooksExtractConnector:
 
             df_exchange_rates = df_exchange_rates[['SourceCurrencyCode', 'TargetCurrencyCode', 'Rate', 'AsOfDate']]
 
-            df_exchange_rates.to_sql('quickboooks_extract_exchange_rates', self.__dbconn,
-                                     if_exists='replace', index=False)
+            df_exchange_rates.to_sql('qbo_extract_exchange_rates', self.__dbconn,
+                                     if_exists='append', index=False)
             return df_exchange_rates.to_dict(orient='records')
 
         return []
@@ -220,6 +229,6 @@ class QuickbooksExtractConnector:
 
         df_currency = pd.DataFrame(currency_dict)
 
-        df_currency.to_sql('quickbooks_extract_home_currency', self.__dbconn, if_exists='replace', index=False)
+        df_currency.to_sql('qbo_extract_home_currency', self.__dbconn, if_exists='append', index=False)
 
         return currency_dict[0]['home_currency']

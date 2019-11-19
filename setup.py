@@ -8,7 +8,7 @@ with open('README.md', 'r') as f:
     long_description = f.read()
 
 setuptools.setup(
-    name='quickbooks-db-connector',
+    name='qbo-db-connector',
     version='0.1.0',
     author='Shwetabh Kumar',
     author_email='shwetabh.kumar@fyle.in',

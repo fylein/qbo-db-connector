@@ -1,5 +1,5 @@
-# Quickbooks Database Connector
-Connects Quickbooks to a database to transfer information to and fro.
+# Quickbooks Online Database Connector
+Connects Quickbooks online to a database to transfer information to and fro.
 
 ## Installation
 
@@ -8,7 +8,7 @@ This project requires [Python 3+](https://www.python.org/downloads/).
 1. Download this project and use it (copy it in your project, etc).
 2. Install it from [pip](https://pypi.org).
 
-        $ pip install quickbooks-db-connector
+        $ pip install qbo-db-connector
 
 ## Usage
 
@@ -19,7 +19,7 @@ This connector is very easy to use.
 import logging
 import sqlite3
 
-from quickbooks_db_connector import QuickbooksExtractConnector, QuickbooksLoadConnector
+from qbo_db_connector import QuickbooksExtractConnector, QuickbooksLoadConnector
 
 
 dbconn = sqlite3.connect('/tmp/temp.db')
@@ -58,7 +58,7 @@ quickbooks_extract.extract_exchange_rates()
 # loading
 quickbooks_load.load_check(check_id='100')
 quickbooks_load.load_journal_entry(journal_entry_id='800')
-quickbooks_load.load_attachments(ref_id='100', ref_type='check')
+quickbooks_load.load_attachment(ref_id='100', ref_type='check')
 ```
 
 ## Contribute
