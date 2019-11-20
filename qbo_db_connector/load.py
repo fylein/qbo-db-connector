@@ -159,7 +159,7 @@ class QuickbooksLoadConnector:
         url = POST_CHECK_URL.format(self.__base_url, self.__realm_id)
 
         check: Dict = pd.read_sql_query(
-            sql='SELECT * FROM qbo_load_checks where id = {0}'.format(check_id),
+            sql="SELECT * FROM qbo_load_checks where id = '{0}'".format(check_id),
             con=self.__dbconn
         ).to_dict(orient='records')[0]
 
