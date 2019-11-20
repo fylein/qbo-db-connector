@@ -100,7 +100,7 @@ class QuickbooksLoadConnector:
                 'Amount': line['amount'],
                 'AccountBasedExpenseLineDetail': {
                     'AccountRef': {
-                        'value': line['account_category']
+                        'value': line['account']
                     },
                     'ClassRef': {
                         'value': line['class']
@@ -174,13 +174,15 @@ class QuickbooksLoadConnector:
             return load_success, {}
 
         lines = self.__construct_check_line_items(check_line_items)
-        qbo_load_check['Line'].append(lines)
+        qbo_load_check['Line'] = lines
 
         response = json.loads(
             requests.post(url, headers=self.__request_header, data=json.dumps(qbo_load_check)).text
         )
 
         if 'Fault' in response:
+            logger.info(response)
+
             response_error: Dict = {
                 'message': response['Fault']['Error'][0]['Message'],
                 'code': response['Fault']['Error'][0]['code']
@@ -297,7 +299,7 @@ class QuickbooksLoadConnector:
         qbo_load_journal_entry_line_items: List[Dict] = self.__construct_journal_entry_line_items(
             journal_entry_line_items
         )
-        qbo_load_journal_entry['Line'].append(qbo_load_journal_entry_line_items)
+        qbo_load_journal_entry['Line'] = qbo_load_journal_entry_line_items
 
         response = json.loads(
             requests.post(url, headers=self.__request_header, data=json.dumps(qbo_load_journal_entry)).text
