@@ -5,7 +5,7 @@ from os import path
 import json
 import logging
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Dict, List
 
 import requests
@@ -28,11 +28,13 @@ class QuickbooksExtractConnector:
     """
     Extract data from Quickbooks and load to Database
     """
-    def __init__(self, config, refresh_token, dbconn):
+    def __init__(self, config, dbconn):
         self.__config = config
         self.__realm_id = config.get('realm_id')
         self.__base_url = config.get('base_url')
         self.__web_app_url = config.get('web_app_url')
+
+        refresh_token = config.get('refresh_token')
 
         self.__dbconn = dbconn
 
@@ -126,6 +128,8 @@ class QuickbooksExtractConnector:
 
         if data:
             df = pd.DataFrame(data)
+
+            df = df[['Id', 'Name']]
             df.to_sql('qbo_extract_accounts', self.__dbconn, if_exists='append', index=False)
 
             return df['Id'].to_list()
@@ -145,6 +149,7 @@ class QuickbooksExtractConnector:
 
         if data:
             df = pd.DataFrame(data)
+            df = df[['Id', 'Name']]
             df.to_sql('qbo_extract_classes', self.__dbconn, if_exists='append', index=False)
 
             return df['Id'].to_list()
@@ -164,6 +169,7 @@ class QuickbooksExtractConnector:
 
         if data:
             df = pd.DataFrame(data)
+            df = df[['Id', 'Name']]
             df.to_sql('qbo_extract_departments', self.__dbconn, if_exists='append', index=False)
 
             return df['Id'].to_list()
@@ -183,6 +189,7 @@ class QuickbooksExtractConnector:
 
         if data:
             df = pd.DataFrame(data)
+            df = df[['Id', 'GivenName', 'FamilyName']]
             df.to_sql('qbo_extract_employees', self.__dbconn, if_exists='append', index=False)
             return df['Id'].to_list()
 
@@ -195,7 +202,9 @@ class QuickbooksExtractConnector:
         """
         logger.info('Extracting exchange rates from Quickbooks.')
 
-        url = GET_EXCHANGE_RATES.format(self.__base_url, self.__realm_id, datetime.now().strftime("%Y-%m-%d"))
+        as_of_date = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+
+        url = GET_EXCHANGE_RATES.format(self.__base_url, self.__realm_id, as_of_date)
         data = requests.get(url, headers=self.__request_header).text
         exchange_rates = json.loads(data)['QueryResponse']['ExchangeRate']
 

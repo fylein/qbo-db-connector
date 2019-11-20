@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS qbo_extract_classses;
+DROP TABLE IF EXISTS qbo_extract_classes;
 DROP TABLE IF EXISTS qbo_extract_departments;
 DROP TABLE IF EXISTS qbo_extract_accounts;
 DROP TABLE IF EXISTS qbo_extract_employees;
