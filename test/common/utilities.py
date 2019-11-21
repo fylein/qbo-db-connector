@@ -9,6 +9,11 @@ logger = logging.getLogger(__name__)
 
 
 def get_mock_qbo_dict(filename):
+    """
+    Get moch qbo dictionary by filename
+    :param filename: name of the file
+    :return:
+    """
     basepath = path.dirname(__file__)
     filepath = path.join(basepath, filename)
     mock_xero_json = open(filepath, 'r').read()
