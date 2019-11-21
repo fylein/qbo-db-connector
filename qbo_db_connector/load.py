@@ -72,7 +72,7 @@ class QuickbooksLoadConnector:
         self.__file_header.update({
             'Authorization': 'Bearer {0}'.format(access_token)
         })
-        return refresh_token
+        return auth_client.refresh_token
 
     def create_tables(self):
         """
