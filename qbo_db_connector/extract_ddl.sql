@@ -23,7 +23,8 @@ CREATE TABLE qbo_extract_accounts (
 CREATE TABLE qbo_extract_employees (
     Id TEXT,
     GivenName TEXT,
-    FamilyName TEXT
+    FamilyName TEXT,
+    DisplayName TEXT
 );
 
 CREATE TABLE qbo_extract_home_currency (

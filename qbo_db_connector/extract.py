@@ -16,8 +16,8 @@ from intuitlib.client import AuthClient
 logger = logging.getLogger('QuickbooksExtractConnector')
 
 GET_ACCOUNTS_URL = '{0}/v3/company/{1}/query?query=select Id, Name from Account STARTPOSITION {2} MAXRESULTS 1000'
-GET_EMPLOYEES_URL = '{0}/v3/company/{1}/query?query=select Id, GivenName, FamilyName from Employee STARTPOSITION {2} ' \
-                    'MAXRESULTS 1000 '
+GET_EMPLOYEES_URL = '{0}/v3/company/{1}/query?query=select Id, GivenName, FamilyName, DisplayName from Employee ' \
+                    'STARTPOSITION {2} MAXRESULTS 1000'
 GET_CLASSES_URL = '{0}/v3/company/{1}/query?query=select Id, Name from Class STARTPOSITION {2} MAXRESULTS 1000'
 GET_DEPARTMENTS_URL = '{0}/v3/company/{1}/query?query=select Id, Name from Department STARTPOSITION {2} MAXRESULTS 1000'
 GET_HOME_CURRENCY = '{0}/v3/company/{1}/preferences'
@@ -189,7 +189,17 @@ class QuickbooksExtractConnector:
 
         if data:
             df = pd.DataFrame(data)
-            df = df[['Id', 'GivenName', 'FamilyName']]
+
+            if 'GivenName' not in df:
+                df['GivenName'] = None
+
+            if 'FamilyName' not in df:
+                df['FamilyName'] = None
+
+            if 'DisplayName' not in df:
+                df['DisplayName'] = None
+
+            df = df[['Id', 'GivenName', 'FamilyName', 'DisplayName']]
             df.to_sql('qbo_extract_employees', self.__dbconn, if_exists='append', index=False)
             return df['Id'].to_list()
 

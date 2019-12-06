@@ -9,7 +9,7 @@ with open('README.md', 'r') as f:
 
 setuptools.setup(
     name='qbo-db-connector',
-    version='0.3.1',
+    version='0.3.2',
     author='Shwetabh Kumar',
     author_email='shwetabh.kumar@fyle.in',
     description='Connects Quickbooks to a database connector to transfer information to and fro.',
