@@ -46,6 +46,7 @@ CREATE TABLE qbo_load_check_lineitems (
 
 CREATE TABLE qbo_load_attachments (
     ref_id TEXT,
+    prep_id TEXT,
     ref_type TEXT,
     content TEXT,
     filename TEXT
