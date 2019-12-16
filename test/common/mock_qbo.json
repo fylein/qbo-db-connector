@@ -1,0 +1,402 @@
+{
+  "accounts": [
+    {
+      "Id": "140",
+      "Name": "5900 Misc Costs"
+    },
+    {
+      "Id": "139",
+      "Name": "7214 Travel - Subsistence"
+    },
+    {
+      "Id": "152",
+      "Name": "A1"
+    },
+    {
+      "Id": "153",
+      "Name": "A2"
+    },
+    {
+      "Id": "156",
+      "Name": "Accounts Payable (A/P)"
+    },
+    {
+      "Id": "160",
+      "Name": "Accounts Payable (A/P) - GBP"
+    },
+    {
+      "Id": "106",
+      "Name": "Advertising"
+    },
+    {
+      "Id": "107",
+      "Name": "Bank Charges"
+    },
+    {
+      "Id": "151",
+      "Name": "Billable Expense Income"
+    },
+    {
+      "Id": "164",
+      "Name": "California Department of Tax and Fee Administration Payable"
+    },
+    {
+      "Id": "147",
+      "Name": "Cash on hand"
+    },
+    {
+      "Id": "108",
+      "Name": "Commissions & fees"
+    },
+    {
+      "Id": "137",
+      "Name": "Cost of Goods Sold"
+    },
+    {
+      "Id": "143",
+      "Name": "Credit Card"
+    },
+    {
+      "Id": "102",
+      "Name": "Discounts"
+    },
+    {
+      "Id": "129",
+      "Name": "Disposal Fees"
+    },
+    {
+      "Id": "109",
+      "Name": "Dues & Subscriptions"
+    },
+    {
+      "Id": "103",
+      "Name": "Gross Receipts"
+    },
+    {
+      "Id": "150",
+      "Name": "Hyv FAE JV"
+    },
+    {
+      "Id": "110",
+      "Name": "Insurance"
+    },
+    {
+      "Id": "127",
+      "Name": "Insurance - Liability"
+    },
+    {
+      "Id": "124",
+      "Name": "Interest Earned"
+    },
+    {
+      "Id": "138",
+      "Name": "Inventory Asset"
+    },
+    {
+      "Id": "111",
+      "Name": "Legal & Professional Fees"
+    },
+    {
+      "Id": "165",
+      "Name": "Louisiana, Beauregard Parish Payable"
+    },
+    {
+      "Id": "144",
+      "Name": "Master Card"
+    },
+    {
+      "Id": "112",
+      "Name": "Meals and Entertainment"
+    },
+    {
+      "Id": "113",
+      "Name": "Miscellaneous"
+    },
+    {
+      "Id": "114",
+      "Name": "Office Expenses"
+    },
+    {
+      "Id": "141",
+      "Name": "Opening Balance Equity"
+    },
+    {
+      "Id": "163",
+      "Name": "Organizational Costs"
+    },
+    {
+      "Id": "125",
+      "Name": "Other Portfolio Income"
+    },
+    {
+      "Id": "166",
+      "Name": "Out Of Scope Agency Payable"
+    },
+    {
+      "Id": "126",
+      "Name": "Penalties & Settlements"
+    },
+    {
+      "Id": "142",
+      "Name": "Personal"
+    },
+    {
+      "Id": "162",
+      "Name": "Personal 3"
+    },
+    {
+      "Id": "159",
+      "Name": "Personal\u00a02"
+    },
+    {
+      "Id": "158",
+      "Name": "Pound"
+    },
+    {
+      "Id": "100",
+      "Name": "Prepaid Expenses"
+    },
+    {
+      "Id": "115",
+      "Name": "Promotional"
+    },
+    {
+      "Id": "135",
+      "Name": "Purchases"
+    },
+    {
+      "Id": "146",
+      "Name": "Recharges"
+    },
+    {
+      "Id": "157",
+      "Name": "Reconciliation Discrepancies"
+    },
+    {
+      "Id": "148",
+      "Name": "Recoup Costs - Video (Video)"
+    },
+    {
+      "Id": "104",
+      "Name": "Refunds-Allowances"
+    },
+    {
+      "Id": "116",
+      "Name": "Rent or Lease"
+    },
+    {
+      "Id": "117",
+      "Name": "Repair & Maintenance"
+    },
+    {
+      "Id": "131",
+      "Name": "Retained Earnings"
+    },
+    {
+      "Id": "105",
+      "Name": "Sales"
+    },
+    {
+      "Id": "136",
+      "Name": "Sales of Product Income"
+    },
+    {
+      "Id": "161",
+      "Name": "Savings"
+    },
+    {
+      "Id": "130",
+      "Name": "Services"
+    },
+    {
+      "Id": "118",
+      "Name": "Stationery & Printing"
+    },
+    {
+      "Id": "119",
+      "Name": "Supplies"
+    },
+    {
+      "Id": "120",
+      "Name": "Taxes & Licenses"
+    },
+    {
+      "Id": "128",
+      "Name": "Tools"
+    },
+    {
+      "Id": "149",
+      "Name": "Tour Costs - Crew - Production Manager"
+    },
+    {
+      "Id": "121",
+      "Name": "Travel"
+    },
+    {
+      "Id": "122",
+      "Name": "Travel Meals"
+    },
+    {
+      "Id": "154",
+      "Name": "u1"
+    },
+    {
+      "Id": "155",
+      "Name": "u2"
+    },
+    {
+      "Id": "134",
+      "Name": "Uncategorized Asset"
+    },
+    {
+      "Id": "133",
+      "Name": "Uncategorized Expense"
+    },
+    {
+      "Id": "132",
+      "Name": "Uncategorized Income"
+    },
+    {
+      "Id": "101",
+      "Name": "Undeposited Funds"
+    },
+    {
+      "Id": "123",
+      "Name": "Utilities"
+    },
+    {
+      "Id": "145",
+      "Name": "Visa"
+    }
+  ],
+  "employees": [
+    {
+      "Id": "63",
+      "GivenName": "Jamine",
+      "FamilyName": null
+    },
+    {
+      "Id": "61",
+      "GivenName": "Keith",
+      "FamilyName": null
+    },
+    {
+      "Id": "67",
+      "GivenName": "Shwetabh",
+      "FamilyName": "Kumar"
+    },
+    {
+      "Id": "62",
+      "GivenName": "Vikas",
+      "FamilyName": "Prasad"
+    },
+    {
+      "Id": "66",
+      "GivenName": "Vishal",
+      "FamilyName": "Soni"
+    },
+    {
+      "Id": "64",
+      "GivenName": "u1",
+      "FamilyName": null
+    },
+    {
+      "Id": "65",
+      "GivenName": "u2",
+      "FamilyName": null
+    }
+  ],
+  "classes": [
+    {
+      "Id": "5000000000000085682",
+      "Name": "Adidas"
+    },
+    {
+      "Id": "5000000000000126603",
+      "Name": "cc1"
+    },
+    {
+      "Id": "5000000000000126604",
+      "Name": "cc2"
+    },
+    {
+      "Id": "5000000000000085683",
+      "Name": "Coachella"
+    },
+    {
+      "Id": "5000000000000127753",
+      "Name": "Demo"
+    },
+    {
+      "Id": "5000000000000085684",
+      "Name": "Radio"
+    },
+    {
+      "Id": "5000000000000128370",
+      "Name": "sample"
+    }
+  ],
+  "departments": [
+    {
+      "Id": "7",
+      "Name": "Bebe Rexha"
+    },
+    {
+      "Id": "8",
+      "Name": "Chase Ortega"
+    },
+    {
+      "Id": "9",
+      "Name": "David Olshanetsky"
+    },
+    {
+      "Id": "10",
+      "Name": "Evan Ross"
+    },
+    {
+      "Id": "4",
+      "Name": "FAE"
+    },
+    {
+      "Id": "11",
+      "Name": "Invisible men (George Astasio, Jason Pebworth, Jon Shave)"
+    },
+    {
+      "Id": "12",
+      "Name": "Lil Peep Documentary"
+    },
+    {
+      "Id": "5",
+      "Name": "Naations"
+    },
+    {
+      "Id": "16",
+      "Name": "p1"
+    },
+    {
+      "Id": "17",
+      "Name": "p2"
+    },
+    {
+      "Id": "13",
+      "Name": "Rita Ora"
+    },
+    {
+      "Id": "14",
+      "Name": "suhas_p1"
+    },
+    {
+      "Id": "15",
+      "Name": "suhas_p2"
+    },
+    {
+      "Id": "6",
+      "Name": "Too poor"
+    }
+  ],
+  "home_currency": [
+    {
+      "home_currency": "USD"
+    }
+  ]
+}
