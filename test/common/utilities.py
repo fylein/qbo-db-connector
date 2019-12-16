@@ -1,3 +1,6 @@
+"""
+Common utility for QBO connector tests
+"""
 import json
 import logging
 
@@ -23,6 +26,10 @@ def get_mock_qbo_dict(filename):
 
 
 def get_mock_qbo_from_file(filename):
+    """
+    Returns mock objects for QBO Extract Connectors
+    :param: JSON file name
+    """
     mock_qbo_dict = get_mock_qbo_dict(filename)
     mock_qbo = Mock()
     mock_qbo.accounts.all.return_value = mock_qbo_dict['employees']
@@ -34,10 +41,16 @@ def get_mock_qbo_from_file(filename):
 
 
 def get_mock_qbo():
+    """
+    Get mock qbo with data
+    """
     return get_mock_qbo_from_file('mock_qbo.json')
 
 
 def get_mock_qbo_empty():
+    """
+    Get mock qbo with empty data
+    """
     return get_mock_qbo_from_file('mock_qbo_empty.json')
 
 
@@ -78,12 +91,22 @@ def dbconn_table_num_rows(dbconn, tablename):
 
 
 def dbconn_table_row_dict(dbconn, tablename):
+    """
+    Gets one row as dictionary
+    :param dbconn: db connection
+    :param tablename: name of the table
+    :return: db row as dict
+    """
     query = f'select * from {tablename} limit 1'
     row = dbconn.cursor().execute(query).fetchone()
     return row
 
 
 def qbo_connect(dbconn):
+    """
+    QBO Connector connection
+    :param: db connection
+    """
     file = open('test_credentials.json', 'r')
     qbo_credentials = json.load(file)
 
@@ -92,6 +115,4 @@ def qbo_connect(dbconn):
 
     with open('result.json', 'w') as fp:
         json.dump(qbo_credentials, fp)
-    
     return qbo_extract
-
