@@ -1,10 +1,12 @@
+"""
+Integration Tests
+"""
 import logging
 import os
 import sqlite3
 
-import pytest
-
 from test.common.utilities import get_mock_qbo, qbo_connect
+import pytest
 
 logger = logging.getLogger(__name__)
 
@@ -19,6 +21,9 @@ def mock_qbo():
 
 @pytest.fixture
 def dbconn():
+    """
+    Initializing db connection
+    """
     sqlite_db_file = '/tmp/test_qbo.db'
     if os.path.exists(sqlite_db_file):
         os.remove(sqlite_db_file)
@@ -34,10 +39,10 @@ def qbo_extract():
 
 
 @pytest.fixture
-def qbo(qbo_extract, dbconn):
+def qbo():
     """
     Return QBO Extract connector objects
     """
-    res = qbo_extract
+    res = qbo_extract()
     res.create_tables()
     return res
