@@ -79,8 +79,8 @@ def test_classes(qbo, mock_qbo):
         'qbo_extract.extract_classes has stuff that mock_qbo.classes.all doesnt'
     assert dict_compare_keys(mock_classes[0], classes) == [], \
         'mock_qbo.classes.all() has stuff that qbo_extract.extract_classes doesnt'
-    
-    
+
+
 def test_home_currency(qbo, mock_qbo):
     """
     Test QBO Extract home_currency
