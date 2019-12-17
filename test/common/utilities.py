@@ -12,6 +12,16 @@ from qbo_db_connector.extract import QuickbooksExtractConnector
 logger = logging.getLogger(__name__)
 
 
+def dict_factory(cursor, row):
+    """
+    Sqlite dictionary row factory
+    """
+    d = {}
+    for idx, col in enumerate(cursor.description):
+        d[col[0]] = row[idx]
+    return d
+
+
 def get_mock_qbo_dict(filename):
     """
     Get moch qbo dictionary by filename
@@ -32,7 +42,7 @@ def get_mock_qbo_from_file(filename):
     """
     mock_qbo_dict = get_mock_qbo_dict(filename)
     mock_qbo = Mock()
-    mock_qbo.accounts.all.return_value = mock_qbo_dict['employees']
+    mock_qbo.accounts.all.return_value = mock_qbo_dict['accounts']
     mock_qbo.classes.all.return_value = mock_qbo_dict['classes']
     mock_qbo.departments.all.return_value = mock_qbo_dict['departments']
     mock_qbo.employees.all.return_value = mock_qbo_dict['employees']
@@ -97,6 +107,7 @@ def dbconn_table_row_dict(dbconn, tablename):
     :param tablename: name of the table
     :return: db row as dict
     """
+    dbconn.row_factory = dict_factory
     query = f'select * from {tablename} limit 1'
     row = dbconn.cursor().execute(query).fetchone()
     return row
@@ -111,8 +122,8 @@ def qbo_connect(dbconn):
     qbo_credentials = json.load(file)
 
     qbo_extract = QuickbooksExtractConnector(config=qbo_credentials, dbconn=dbconn)
-    qbo_credentials['refresh_token'] = qbo_extract
+    qbo_credentials['refresh_token'] = qbo_extract.refresh_token
 
-    with open('result.json', 'w') as fp:
+    with open('test_credentials.json', 'w') as fp:
         json.dump(qbo_credentials, fp)
     return qbo_extract
