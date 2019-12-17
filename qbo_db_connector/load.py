@@ -72,7 +72,7 @@ class QuickbooksLoadConnector:
         self.__file_header.update({
             'Authorization': 'Bearer {0}'.format(access_token)
         })
-        return refresh_token
+        return auth_client.refresh_token
 
     def create_tables(self):
         """
@@ -401,35 +401,36 @@ class QuickbooksLoadConnector:
 
         return {}
 
-    def load_attachment(self, ref_id: str, ref_type: str) -> bool:
+    def load_attachment(self, ref_id: str, ref_type: str, prep_id: str) -> bool:
         """
         Link attachments to objects Quickbooks
+        :param prep_id: prep id for export
         :param ref_id: object id
         :param ref_type: type of object
         :return: True for success, False for failure
         """
-        attachment = pd.read_sql_query(
-            "select * from qbo_load_attachments where ref_id = '{0}' and ref_type = '{1}'".format(ref_id, ref_type),
+        attachments = pd.read_sql_query(
+            "select * from qbo_load_attachments where prep_id = '{0}' and ref_type = '{1}'".format(prep_id, ref_type),
             self.__dbconn
         )
         load_success = False
 
-        if len(attachment.index):
-            attachment = attachment.to_dict(orient='records')[0]
-            url = POST_ATTACHMENT_URL.format(self.__base_url, self.__realm_id)
-            file = self.__upload_file(attachment['content'], attachment['filename'])
+        if len(attachments.index):
+            for attachment in attachments.to_dict(orient='records'):
+                url = POST_ATTACHMENT_URL.format(self.__base_url, self.__realm_id)
+                file = self.__upload_file(attachment['content'], attachment['filename'])
 
-            if file:
-                attachable_ref = [
-                    {
-                        'EntityRef': {
-                            'type': 'Purchase' if ref_type == 'check' else 'JournalEntry',
-                            'value': ref_id
+                if file:
+                    attachable_ref = [
+                        {
+                            'EntityRef': {
+                                'type': 'Purchase' if ref_type == 'check' else 'JournalEntry',
+                                'value': ref_id
+                            }
                         }
-                    }
-                ]
-                file['AttachableRef'] = attachable_ref
-                requests.post(url=url, data=json.dumps(file), headers=self.__request_header)
-                load_success = True
+                    ]
+                    file['AttachableRef'] = attachable_ref
+                    requests.post(url=url, data=json.dumps(file), headers=self.__request_header)
+                    load_success = True
 
         return load_success
