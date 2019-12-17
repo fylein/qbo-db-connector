@@ -47,6 +47,7 @@ def get_mock_qbo_from_file(filename):
     mock_qbo.departments.all.return_value = mock_qbo_dict['departments']
     mock_qbo.employees.all.return_value = mock_qbo_dict['employees']
     mock_qbo.home_currency.all.return_value = mock_qbo_dict['home_currency']
+    mock_qbo.exchange_rates.all.return_value = mock_qbo_dict['exchange_rates']
     return mock_qbo
 
 
