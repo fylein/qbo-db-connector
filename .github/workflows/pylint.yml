@@ -11,12 +11,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Install numpy
-      run: |
-        apk add --no-cache python3-dev libstdc++
-        apk add --no-cache g++
-        ln -s /usr/include/locale.h /usr/include/xlocale.h
-        pip3 install numpy
     - name: GitHub Action for pylint
       uses: cclauss/GitHub-Action-for-pylint@0.7.0
       with:
