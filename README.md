@@ -18,6 +18,7 @@ This connector is very easy to use.
 ```python
 import logging
 import sqlite3
+from qbosdk import QuickbooksOnlineSDK
 
 from qbo_db_connector import QuickbooksExtractConnector, QuickbooksLoadConnector
 
@@ -34,18 +35,24 @@ quickbooks_config = {
     'client_secret': '<CLIENT SECRET>',
     'realm_id': '<REALM ID>',
     'refresh_token': '<REFRESH TOKEN>',
-    'base_url': '<API BASE URL>',
     'environment': '<ENVIRONMENT>',
-    'web_app_url': '<QUICKBOOKS WEB APP URL>'
 }
 
 logger.info('Quickbooks db connector usage')
 
-quickbooks_extract = QuickbooksExtractConnector(config=quickbooks_config, dbconn=dbconn)
-quickbooks_load = QuickbooksLoadConnector(config=quickbooks_config, dbconn=dbconn)
+connection = QuickbooksOnlineSDK(
+    client_id=quickbooks_config['client_id'],
+    client_secret=quickbooks_config['client_secret'],
+    refresh_token=quickbooks_config['refresh_token'],
+    realm_id=quickbooks_config['realm_id'],
+    environment=quickbooks_config['environment']
+)
+
+quickbooks_extract = QuickbooksExtractConnector(qbo_connection=connection, dbconn=dbconn)
+quickbooks_load = QuickbooksLoadConnector(qbo_connection=connection, dbconn=dbconn)
 
 # make sure you save the updated refresh token
-refresh_token = quickbooks_extract.refresh_token
+refresh_token = connection.refresh_token
 
 # extracting
 quickbooks_extract.extract_employees()
@@ -58,7 +65,7 @@ quickbooks_extract.extract_exchange_rates()
 # loading
 quickbooks_load.load_check(check_id='100')
 quickbooks_load.load_journal_entry(journal_entry_id='800')
-quickbooks_load.load_attachment(ref_id='100', ref_type='check')
+quickbooks_load.load_attachments(ref_id='100', ref_type='Purchase')
 ```
 
 ## Contribute
