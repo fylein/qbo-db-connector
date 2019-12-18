@@ -11,28 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: pandas
-      dependencies:
-      - Cython >=0.28.2
-      - matplotlib
-      - nomkl
-      - numexpr
-      - numpy=1.14*
-      - openpyxl
-      - pytables
-      - pytest
-      - python-dateutil
-      - python=3.7*
-      - pytz
-      - scipy
-      - sqlalchemy
-      - xlrd
-      - xlsxwriter
-      - xlwt
-      - hypothesis
-      - pip:
-          - git+https://github.com/spacetelescope/asv
-          - pytest-xdist
+    - uses: pandas
     - name: GitHub Action for pylint
       uses: cclauss/GitHub-Action-for-pylint@0.7.0
       with:
