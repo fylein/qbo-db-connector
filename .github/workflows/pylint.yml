@@ -14,5 +14,5 @@ jobs:
     - name: GitHub Action for pylint
       uses: cclauss/GitHub-Action-for-pylint@0.7.0
       with:
-        args: pip install cython>=0.29 && pip3 install --upgrade pip --ignore-installed -r requirements.txt && pylint --rcfile=.pylintrc qbo_db_connector
+        args: pip install cython>=0.29 && pip install numpy==1.16.4 && pip3 install -r requirements.txt && pylint --rcfile=.pylintrc qbo_db_connector
         
