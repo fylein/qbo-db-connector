@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  pull_request:
+    types: [assigned, opened, synchronize, reopened]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: GitHub Action for pylint
+      uses: cclauss/GitHub-Action-for-pylint@0.7.0
+      with:
+        args: pip install cython>=0.29 && pip install numpy==1.16.4 && pip3 install -r requirements.txt && pylint --rcfile=.pylintrc qbo_db_connector
+        

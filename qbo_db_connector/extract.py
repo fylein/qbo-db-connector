@@ -127,7 +127,7 @@ class QuickbooksExtractConnector:
         """
         logger.info('Extracting exchange rates from Quickbooks.')
 
-        exchange_rates = self.__qbo_connection.exchangeRates.get()
+        exchange_rates = self.__qbo_connection.exchange_rates.get()
 
         logger.info('%s exchange rates Extracted.', len(exchange_rates))
 
