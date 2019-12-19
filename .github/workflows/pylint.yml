@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Python Pylin GitHub Action
-      uses: fylein/python-pylint-github-actiont@0.7.0
+      uses: fylein/python-pylint-github-action@0.7.0
       with:
         args: pip3 install -r requirements.txt && pylint --rcfile=.pylintrc qbo_db_connector
         
