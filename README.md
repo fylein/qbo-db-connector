@@ -82,6 +82,9 @@ To contribute to this project follow the steps
         git-pylint-commit-hook
         ```
      * Run `chmod +x .git/hooks/pre-commit`
+
+Please not that maintaining a score of 10 is important as the CI pylint action fails when a pull request is opened
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
