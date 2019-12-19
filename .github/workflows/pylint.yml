@@ -11,8 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: GitHub Action for pylint
-      uses: cclauss/GitHub-Action-for-pylint@0.7.0
+    - name: Python Pylin GitHub Action
+      uses: fylein/python-pylint-github-actiont@0.7.0
       with:
-        args: pip install cython>=0.29 && pip install numpy==1.16.4 && pip3 install -r requirements.txt && pylint --rcfile=.pylintrc qbo_db_connector
+        args: pip3 install -r requirements.txt && pylint --rcfile=.pylintrc qbo_db_connector
         
