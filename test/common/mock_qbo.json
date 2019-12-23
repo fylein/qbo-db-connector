@@ -1,0 +1,1275 @@
+{
+  "accounts": [
+    {
+      "Id": "140",
+      "Name": "5900 Misc Costs"
+    },
+    {
+      "Id": "139",
+      "Name": "7214 Travel - Subsistence"
+    },
+    {
+      "Id": "152",
+      "Name": "A1"
+    },
+    {
+      "Id": "153",
+      "Name": "A2"
+    },
+    {
+      "Id": "156",
+      "Name": "Accounts Payable (A/P)"
+    },
+    {
+      "Id": "160",
+      "Name": "Accounts Payable (A/P) - GBP"
+    },
+    {
+      "Id": "106",
+      "Name": "Advertising"
+    },
+    {
+      "Id": "107",
+      "Name": "Bank Charges"
+    },
+    {
+      "Id": "151",
+      "Name": "Billable Expense Income"
+    },
+    {
+      "Id": "164",
+      "Name": "California Department of Tax and Fee Administration Payable"
+    },
+    {
+      "Id": "147",
+      "Name": "Cash on hand"
+    },
+    {
+      "Id": "108",
+      "Name": "Commissions & fees"
+    },
+    {
+      "Id": "137",
+      "Name": "Cost of Goods Sold"
+    },
+    {
+      "Id": "143",
+      "Name": "Credit Card"
+    },
+    {
+      "Id": "102",
+      "Name": "Discounts"
+    },
+    {
+      "Id": "129",
+      "Name": "Disposal Fees"
+    },
+    {
+      "Id": "109",
+      "Name": "Dues & Subscriptions"
+    },
+    {
+      "Id": "103",
+      "Name": "Gross Receipts"
+    },
+    {
+      "Id": "150",
+      "Name": "Hyv FAE JV"
+    },
+    {
+      "Id": "110",
+      "Name": "Insurance"
+    },
+    {
+      "Id": "127",
+      "Name": "Insurance - Liability"
+    },
+    {
+      "Id": "124",
+      "Name": "Interest Earned"
+    },
+    {
+      "Id": "138",
+      "Name": "Inventory Asset"
+    },
+    {
+      "Id": "111",
+      "Name": "Legal & Professional Fees"
+    },
+    {
+      "Id": "165",
+      "Name": "Louisiana, Beauregard Parish Payable"
+    },
+    {
+      "Id": "144",
+      "Name": "Master Card"
+    },
+    {
+      "Id": "112",
+      "Name": "Meals and Entertainment"
+    },
+    {
+      "Id": "113",
+      "Name": "Miscellaneous"
+    },
+    {
+      "Id": "114",
+      "Name": "Office Expenses"
+    },
+    {
+      "Id": "141",
+      "Name": "Opening Balance Equity"
+    },
+    {
+      "Id": "163",
+      "Name": "Organizational Costs"
+    },
+    {
+      "Id": "125",
+      "Name": "Other Portfolio Income"
+    },
+    {
+      "Id": "166",
+      "Name": "Out Of Scope Agency Payable"
+    },
+    {
+      "Id": "126",
+      "Name": "Penalties & Settlements"
+    },
+    {
+      "Id": "142",
+      "Name": "Personal"
+    },
+    {
+      "Id": "162",
+      "Name": "Personal 3"
+    },
+    {
+      "Id": "159",
+      "Name": "Personal\u00a02"
+    },
+    {
+      "Id": "158",
+      "Name": "Pound"
+    },
+    {
+      "Id": "100",
+      "Name": "Prepaid Expenses"
+    },
+    {
+      "Id": "115",
+      "Name": "Promotional"
+    },
+    {
+      "Id": "135",
+      "Name": "Purchases"
+    },
+    {
+      "Id": "146",
+      "Name": "Recharges"
+    },
+    {
+      "Id": "157",
+      "Name": "Reconciliation Discrepancies"
+    },
+    {
+      "Id": "148",
+      "Name": "Recoup Costs - Video (Video)"
+    },
+    {
+      "Id": "104",
+      "Name": "Refunds-Allowances"
+    },
+    {
+      "Id": "116",
+      "Name": "Rent or Lease"
+    },
+    {
+      "Id": "117",
+      "Name": "Repair & Maintenance"
+    },
+    {
+      "Id": "131",
+      "Name": "Retained Earnings"
+    },
+    {
+      "Id": "105",
+      "Name": "Sales"
+    },
+    {
+      "Id": "136",
+      "Name": "Sales of Product Income"
+    },
+    {
+      "Id": "161",
+      "Name": "Savings"
+    },
+    {
+      "Id": "130",
+      "Name": "Services"
+    },
+    {
+      "Id": "118",
+      "Name": "Stationery & Printing"
+    },
+    {
+      "Id": "119",
+      "Name": "Supplies"
+    },
+    {
+      "Id": "120",
+      "Name": "Taxes & Licenses"
+    },
+    {
+      "Id": "128",
+      "Name": "Tools"
+    },
+    {
+      "Id": "149",
+      "Name": "Tour Costs - Crew - Production Manager"
+    },
+    {
+      "Id": "121",
+      "Name": "Travel"
+    },
+    {
+      "Id": "122",
+      "Name": "Travel Meals"
+    },
+    {
+      "Id": "154",
+      "Name": "u1"
+    },
+    {
+      "Id": "155",
+      "Name": "u2"
+    },
+    {
+      "Id": "134",
+      "Name": "Uncategorized Asset"
+    },
+    {
+      "Id": "133",
+      "Name": "Uncategorized Expense"
+    },
+    {
+      "Id": "132",
+      "Name": "Uncategorized Income"
+    },
+    {
+      "Id": "101",
+      "Name": "Undeposited Funds"
+    },
+    {
+      "Id": "123",
+      "Name": "Utilities"
+    },
+    {
+      "Id": "145",
+      "Name": "Visa"
+    }
+  ],
+  "employees": [
+    {
+      "Id": "63",
+      "GivenName": "Jamine",
+      "FamilyName": null,
+      "DisplayName": "Jamine"
+    },
+    {
+      "Id": "61",
+      "GivenName": "Keith",
+      "FamilyName": null,
+      "DisplayName": "Keith"
+    },
+    {
+      "Id": "67",
+      "GivenName": "Shwetabh",
+      "FamilyName": "Kumar",
+      "DisplayName": "Shwetabh Kumar"
+    },
+    {
+      "Id": "62",
+      "GivenName": "Vikas",
+      "FamilyName": "Prasad",
+      "DisplayName": "Vikas Prasad"
+    },
+    {
+      "Id": "66",
+      "GivenName": "Vishal",
+      "FamilyName": "Soni",
+      "DisplayName": "Vishal Soni"
+    },
+    {
+      "Id": "64",
+      "GivenName": "u1",
+      "FamilyName": null,
+      "DisplayName": "u1"
+    },
+    {
+      "Id": "65",
+      "GivenName": "u2",
+      "FamilyName": null,
+      "DisplayName": "u2"
+    }
+  ],
+  "classes": [
+    {
+      "Id": "5000000000000085682",
+      "Name": "Adidas"
+    },
+    {
+      "Id": "5000000000000126603",
+      "Name": "cc1"
+    },
+    {
+      "Id": "5000000000000126604",
+      "Name": "cc2"
+    },
+    {
+      "Id": "5000000000000085683",
+      "Name": "Coachella"
+    },
+    {
+      "Id": "5000000000000127753",
+      "Name": "Demo"
+    },
+    {
+      "Id": "5000000000000085684",
+      "Name": "Radio"
+    },
+    {
+      "Id": "5000000000000128370",
+      "Name": "sample"
+    }
+  ],
+  "departments": [
+    {
+      "Id": "7",
+      "Name": "Bebe Rexha"
+    },
+    {
+      "Id": "8",
+      "Name": "Chase Ortega"
+    },
+    {
+      "Id": "9",
+      "Name": "David Olshanetsky"
+    },
+    {
+      "Id": "10",
+      "Name": "Evan Ross"
+    },
+    {
+      "Id": "4",
+      "Name": "FAE"
+    },
+    {
+      "Id": "11",
+      "Name": "Invisible men (George Astasio, Jason Pebworth, Jon Shave)"
+    },
+    {
+      "Id": "12",
+      "Name": "Lil Peep Documentary"
+    },
+    {
+      "Id": "5",
+      "Name": "Naations"
+    },
+    {
+      "Id": "16",
+      "Name": "p1"
+    },
+    {
+      "Id": "17",
+      "Name": "p2"
+    },
+    {
+      "Id": "13",
+      "Name": "Rita Ora"
+    },
+    {
+      "Id": "14",
+      "Name": "suhas_p1"
+    },
+    {
+      "Id": "15",
+      "Name": "suhas_p2"
+    },
+    {
+      "Id": "6",
+      "Name": "Too poor"
+    }
+  ],
+  "home_currency": [
+    {
+      "home_currency": "USD"
+    }
+  ],
+  "exchange_rates": [
+    {
+      "SourceCurrencyCode": "USD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 1.0,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "GBP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 1.329787,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "CAD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.759578,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SGD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.738416,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "INR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.014093,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "EUR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 1.114659,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MYR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.241453,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "VND",
+      "TargetCurrencyCode": "USD",
+      "Rate": 4.3e-05,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "AUD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.686813,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "HKD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.128363,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "JPY",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.009129,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "CHF",
+      "TargetCurrencyCode": "USD",
+      "Rate": 1.017444,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "UAH",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.042521,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "YER",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.003996,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "AED",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.272242,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "ARS",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.016741,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "AWG",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.555556,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BAM",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.569446,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BBD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.494952,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BDT",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.011773,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BGN",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.569823,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BHD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 2.652189,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BIF",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000533,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BMD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 1.0,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BND",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.737674,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BOB",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.144518,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BRL",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.246105,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BSD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.999318,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BTN",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.014085,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BWP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.092938,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "CDF",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000595,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "CLP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.001311,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "CNY",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.142898,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "COP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000298,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "CRC",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.001762,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "CUP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.999767,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "CVE",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.0101,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "CZK",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.043806,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "DJF",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.005627,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "DKK",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.149147,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "DOP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.018895,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "DZD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.008375,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "EGP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.062344,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "ERN",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.066335,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "ETB",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.031406,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "FJD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.461787,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "FKP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 1.230194,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "GEL",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.347826,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "GHS",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.175016,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "GIP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 1.230194,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "GMD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.019446,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "GNF",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000106,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "GTQ",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.130116,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "GYD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.004786,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "HNL",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.040529,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "HRK",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.149828,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "HTG",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.010382,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "HUF",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.003391,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "IDR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 7.1e-05,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "ILS",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.285928,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "IQD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000841,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "IRR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 2.4e-05,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "ISK",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.008148,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "JMD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.007114,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "JOD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 1.410437,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "KES",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.009843,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "KHR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000246,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "KMF",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.002262,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "KRW",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000859,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "KWD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 3.292181,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "KYD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 1.199117,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "KZT",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.002598,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "LAK",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000113,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "LBP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000661,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "LKR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.005515,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "LRD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.005333,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "LSL",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.069493,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "LYD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.714531,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MAD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.10406,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MDL",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.057933,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MGA",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000276,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MKD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.018101,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MMK",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000663,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MNT",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000367,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MOP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.124559,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MUR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.027412,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MVR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.064725,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MWK",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.001357,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MXN",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.052759,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "MZN",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.015755,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "NAD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.069493,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "NGN",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.002759,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "NIO",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.02925,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "NOK",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.110859,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "NPR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.008803,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "NZD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.659829,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "OMR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 2.597465,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "PAB",
+      "TargetCurrencyCode": "USD",
+      "Rate": 1.000135,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "PEN",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.297098,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "PGK",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.29312,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "PHP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.019759,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "PKR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.006445,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "PLN",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.26166,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "PYG",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000155,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "QAR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.27465,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "RON",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.233552,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "RSD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.009491,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "RUB",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.015967,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "RWF",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.001065,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SAR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.266634,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SBD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.120926,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SCR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.072991,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SDG",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.022152,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SEK",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.106741,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SHP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.75706,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SLL",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000103,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SOS",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.001715,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SVC",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.114207,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SYP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.001942,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SZL",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.068964,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "THB",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.033069,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "TND",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.350877,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "TOP",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.435085,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "TRY",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.170932,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "TTD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.147314,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "TWD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.033192,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "TZS",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000435,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "UGX",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000272,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "UYU",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.026406,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "UZS",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.000105,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "VUV",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.008607,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "WST",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.376811,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "XAF",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.001698,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "XCD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.370021,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "XPF",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.00934,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "ZAR",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.069564,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "ZWD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.002635,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "XOF",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.001698,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "AZN",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.588235,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "BZD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.495789,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "TJS",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.103227,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "SRD",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.133876,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "ZMW",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.068897,
+      "AsOfDate": "2019-12-16"
+    },
+    {
+      "SourceCurrencyCode": "KGS",
+      "TargetCurrencyCode": "USD",
+      "Rate": 0.014319,
+      "AsOfDate": "2019-12-16"
+    }
+  ]
+}

@@ -4,6 +4,9 @@ pandas==0.25.2
 typing==3.7.4.1
 intuit-oauth==1.2.2
 requests
+pytest==5.2.2
+pytest-cov==2.8.1
+pytest-mock==1.11.2
 qbosdk==0.3.0
 pytest==5.2.2
 pytest-cov==2.8.1
