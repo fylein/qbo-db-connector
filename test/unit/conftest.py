@@ -51,7 +51,4 @@ def qlc(qbo, dbconn):
     """
     res = QuickbooksLoadConnector(qbo_connection=qbo, dbconn=dbconn)
     res.create_tables()
-    sqlpath = './test/common/mock_db_load.sql'
-    sql = open(sqlpath, 'r').read()
-    dbconn.executescript(sql)
     return res
