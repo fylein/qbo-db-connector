@@ -1,6 +1,7 @@
 """
 Common utility for QBO connector tests
 """
+import copy
 import json
 import logging
 
@@ -8,7 +9,7 @@ from os import path
 from unittest.mock import Mock
 
 from qbosdk import QuickbooksOnlineSDK
-from qbo_db_connector import QuickbooksExtractConnector
+from qbo_db_connector import QuickbooksExtractConnector, QuickbooksLoadConnector
 
 logger = logging.getLogger(__name__)
 
@@ -43,12 +44,14 @@ def get_mock_qbo_from_file(filename):
     """
     mock_qbo_dict = get_mock_qbo_dict(filename)
     mock_qbo = Mock()
-    mock_qbo.accounts.all.return_value = mock_qbo_dict['accounts']
-    mock_qbo.classes.all.return_value = mock_qbo_dict['classes']
-    mock_qbo.departments.all.return_value = mock_qbo_dict['departments']
-    mock_qbo.employees.all.return_value = mock_qbo_dict['employees']
-    mock_qbo.home_currency.all.return_value = mock_qbo_dict['home_currency']
-    mock_qbo.exchange_rates.all.return_value = mock_qbo_dict['exchange_rates']
+    mock_qbo.accounts.get.return_value = mock_qbo_dict['accounts']
+    mock_qbo.classes.get.return_value = mock_qbo_dict['classes']
+    mock_qbo.departments.get.return_value = mock_qbo_dict['departments']
+    mock_qbo.employees.get.return_value = mock_qbo_dict['employees']
+    mock_qbo.home_currency.get.return_value = mock_qbo_dict['home_currency']
+    mock_qbo.exchange_rates.get.return_value = mock_qbo_dict['exchange_rates']
+    mock_qbo.checks.save.return_value = copy.deepcopy(mock_qbo_dict['check_response'])
+    mock_qbo.journal_entries.save.return_value = copy.deepcopy(mock_qbo_dict['journal_entry_response'])
     return mock_qbo
 
 
@@ -115,10 +118,10 @@ def dbconn_table_row_dict(dbconn, tablename):
     return row
 
 
-def qbo_connect(dbconn):
+def qbo_connect():
     """
-    QBO Connector connection
-    :param: db connection
+    QBO SDK connection
+    :return: qbo connection
     """
     file = open('test_credentials.json', 'r')
     quickbooks_config = json.load(file)
@@ -131,9 +134,26 @@ def qbo_connect(dbconn):
         environment=quickbooks_config['environment']
     )
 
-    qbo_extract = QuickbooksExtractConnector(qbo_connection=qbo_connection, dbconn=dbconn)
     quickbooks_config['refresh_token'] = qbo_connection.refresh_token
-
     with open('test_credentials.json', 'w') as fp:
         json.dump(quickbooks_config, fp)
+
+    return qbo_connection
+
+
+def qec(dbconn):
+    """
+    QBO Connector connection
+    :param: db connection
+    """
+    qbo_extract = QuickbooksExtractConnector(qbo_connection=qbo_connect(), dbconn=dbconn)
     return qbo_extract
+
+
+def qlc(dbconn):
+    """
+    QBO Connector connection
+    :param: db connection
+    """
+    qbo_load = QuickbooksLoadConnector(qbo_connection=qbo_connect(), dbconn=dbconn)
+    return qbo_load

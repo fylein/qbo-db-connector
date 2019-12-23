@@ -1271,5 +1271,20 @@
       "Rate": 0.014319,
       "AsOfDate": "2019-12-16"
     }
-  ]
+  ],
+  "check_response": {
+    "id": "1453",
+    "url": "https://app.sandbox.qbo.intuit.com/app/check?txnId=1453",
+    "entity": "admin1@fyleforqbodemo.com",
+    "record_date": "2019-09-25",
+    "department": "7",
+    "amount": 698.98
+  },
+  "journal_entry_response": {
+    "id": "1467",
+    "url": "https://app.sandbox.qbo.intuit.com/app/journal?txnId=1467",
+    "entity": "admin1@fyleforqbodemo.com",
+    "record_date": "2019-09-25",
+    "amount": 23.98
+  }
 }
