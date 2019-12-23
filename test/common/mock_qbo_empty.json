@@ -3,5 +3,8 @@
   "employees": [],
   "classes": [],
   "departments": [],
-  "home_currency": []
+  "exchange_rates": [],
+  "home_currency": [],
+  "check_response": {},
+  "journal_entry_response": {}
 }

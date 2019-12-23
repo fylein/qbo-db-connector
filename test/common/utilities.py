@@ -101,8 +101,9 @@ def dbconn_table_num_rows(dbconn, tablename):
     """
     Helper function to calculate number of rows
     """
-    query = f'select count(*) from {tablename}'
-    return dbconn.cursor().execute(query).fetchone()[0]
+    dbconn.row_factory = dict_factory
+    query = f'select count(*) as count from {tablename}'
+    return dbconn.cursor().execute(query).fetchone()['count']
 
 
 def dbconn_table_row_dict(dbconn, tablename):
