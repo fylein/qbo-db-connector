@@ -6,5 +6,7 @@
   "exchange_rates": [],
   "home_currency": [],
   "check_response": {},
-  "journal_entry_response": {}
+  "journal_entry_response": {},
+  "check_sdk_response": {},
+  "journal_entry_sdk_response": {}
 }

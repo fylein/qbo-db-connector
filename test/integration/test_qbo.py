@@ -128,11 +128,11 @@ def test_load_checks(qbo_lo, mock_qbo):
     dbconn().executescript(sql)
 
     check = qbo_lo.load_check(check_id='C1')
-    mock_check = mock_qbo.checks.save()
+    mock_check = mock_qbo.purchases.save()
 
-    assert dict_compare_keys(check, mock_check) == [], \
+    assert dict_compare_keys(check, mock_check['Purchase']) == [], \
         'qbo_load.load_check has stuff that mock_qbo.load_check doesnt'
-    assert dict_compare_keys(mock_check, check) == [], \
+    assert dict_compare_keys(mock_check['Purchase'], check) == [], \
         'mock_qbo.load_check has stuff that qbo_load.load_check doesnt'
 
 
@@ -149,7 +149,7 @@ def test_load_journal_entries(qbo_lo, mock_qbo):
     journal_entry = qbo_lo.load_journal_entry(journal_entry_id='J1')
     mock_journal_entry = mock_qbo.journal_entries.save()
 
-    assert dict_compare_keys(journal_entry, mock_journal_entry) == [], \
+    assert dict_compare_keys(journal_entry, mock_journal_entry['JournalEntry']) == [], \
         'qbo_load.load_journal_entry has stuff that mock_qbo.load_journal_entry doesnt'
-    assert dict_compare_keys(mock_journal_entry, journal_entry) == [], \
+    assert dict_compare_keys(mock_journal_entry['JournalEntry'], journal_entry) == [], \
         'mock_qbo.load_journal_entry has stuff that qbo_load.load_journal_entry doesnt'
