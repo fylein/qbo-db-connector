@@ -82,8 +82,71 @@ To contribute to this project follow the steps
         git-pylint-commit-hook
         ```
      * Run `chmod +x .git/hooks/pre-commit`
+* Make necessary changes
+* Run unit tests to ensure everything is fine
 
-Please not that maintaining a score of 10 is important as the CI pylint action fails when a pull request is opened
+## Unit Tests
+
+To run unit tests, run pytest in the following manner:
+
+```
+python -m pytest test/unit
+```
+
+You should see something like this:
+```
+================================================================== test session starts ==================================================================
+-------------------------------------------------------------------------------------------------------------------------------- live log call ---------------------------------------------------------------------------------------------------------------------------------
+2019-12-24 12:10:46 [    INFO] test.unit.test_mocks: Testing mock data (test_mocks.py:18)
+PASSED                                                                                                                                                                                                                                                                   [ 69%]
+test/unit/test_mocks.py::test_dbconn_mock_setup
+-------------------------------------------------------------------------------------------------------------------------------- live log call ---------------------------------------------------------------------------------------------------------------------------------
+2019-12-24 12:10:46 [    INFO] test.unit.test_mocks: Testing mock dbconn (test_mocks.py:29)
+PASSED                                                                                                                                                                                                                                                                   [ 76%]
+test/unit/test_mocks.py::test_qec_mock_setup                                                                                           [100%]
+
+=================================================================== 3 passed in 0.10s ===================================================================
+
+```
+
+## Integration Tests
+
+To run integration tests, you will need a mechanism to connect to a real qbo account. Save this info in a test_credentials.json file in your root directory:
+
+```json
+{
+  "client_id": "<client_id>",
+  "client_secret": "<client_secret>",
+  "realm_id": "<realm_id>",
+  "refresh_token": "<refresh_token>",
+  "environment": "<environment sandbox / production>"
+}
+```
+
+## Code coverage
+
+To get code coverage report, run this command:
+
+```bash
+---------- coverage: platform darwin, python 3.7.4-final-0 -----------
+Name                           Stmts   Miss  Cover
+--------------------------------------------------
+qbo_db_connector/__init__.py       2      0   100%
+qbo_db_connector/extract.py       79      3    96%
+qbo_db_connector/load.py          71      9    87%
+--------------------------------------------------
+TOTAL                            152     12    92%
+```
+
+To get an html report, run this command:
+
+```bash
+python -m pytest --cov=qbo_db_connector --cov-report html:cov_html
+```
+
+We want to maintain code coverage of more than 90% for this project at all times.
+
+Please note that maintaining a score of 10 is important as the CI pylint action fails when a pull request is opened
 
 ## License
 
