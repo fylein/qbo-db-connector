@@ -1,0 +1,18 @@
+name: Unit Tests
+
+on:
+  pull_request:
+    types: [assigned, opened, synchronize, reopened]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Python Pytest GitHub Action
+      uses: fylein/python-pytest-github-action@v2
+      with:
+        args: pip3 install -r requirements.txt && pytest test/unit --cov=qbo-db-connector
+
