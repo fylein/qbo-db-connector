@@ -50,8 +50,10 @@ def get_mock_qbo_from_file(filename):
     mock_qbo.employees.get.return_value = mock_qbo_dict['employees']
     mock_qbo.home_currency.get.return_value = mock_qbo_dict['home_currency']
     mock_qbo.exchange_rates.get.return_value = mock_qbo_dict['exchange_rates']
-    mock_qbo.checks.save.return_value = copy.deepcopy(mock_qbo_dict['check_response'])
+    mock_qbo.purchases.save.return_value = copy.deepcopy(mock_qbo_dict['check_response'])
     mock_qbo.journal_entries.save.return_value = copy.deepcopy(mock_qbo_dict['journal_entry_response'])
+    mock_qbo.purchases.post.return_value = copy.deepcopy(mock_qbo_dict['check_sdk_response'])
+    mock_qbo.journal_entries.post.return_value = copy.deepcopy(mock_qbo_dict['journal_entry_sdk_response'])
     return mock_qbo
 
 
@@ -101,8 +103,9 @@ def dbconn_table_num_rows(dbconn, tablename):
     """
     Helper function to calculate number of rows
     """
-    query = f'select count(*) from {tablename}'
-    return dbconn.cursor().execute(query).fetchone()[0]
+    dbconn.row_factory = dict_factory
+    query = f'select count(*) as count from {tablename}'
+    return dbconn.cursor().execute(query).fetchone()['count']
 
 
 def dbconn_table_row_dict(dbconn, tablename):
@@ -115,6 +118,16 @@ def dbconn_table_row_dict(dbconn, tablename):
     dbconn.row_factory = dict_factory
     query = f'select * from {tablename} limit 1'
     row = dbconn.cursor().execute(query).fetchone()
+    return row
+
+
+def dbconn_get_load_object_by_id(dbconn, tablename, object_id):
+    """
+    Get load object by Id
+    """
+    dbconn.row_factory = dict_factory
+    query = f"select * from {tablename} where id = '{object_id}'"
+    row = dbconn.cursor().execute(query).fetchall()
     return row
 
 
