@@ -8,6 +8,7 @@ CREATE TABLE qbo_load_journal_entries (
     employee_email TEXT,
     record_date TEXT,
     id TEXT,
+    doc_id TEXT,
     currency TEXT,
     private_note TEXT
 );
